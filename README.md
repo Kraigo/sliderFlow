@@ -10,11 +10,13 @@ Need JQuery http://jquery.com/download/
 ```html
 <script src=”jquery.sliderFlow.min.js”></script>
 ```
-### 2. Create HTML
+#### 2. Create HTML
 ```html
 <div id="slider">
 	<ul class="slider-container">
-		<li class="slide">...
+		<li class="slide"></li>
+		...
+		<li class="slide"></li>
 	</ul>
 </div>
 ```
@@ -23,8 +25,8 @@ Need JQuery http://jquery.com/download/
 ```javascript
 $(function() {
 	$('#slider').sliderFlow({
-		'container' : '.slider-container', // <ul> containter name
-		'navigation' : '.slider-navigation', // <div> for navigation line
+		'container' : '.slider-container', // <ul> containter class
+		'navigation' : '.slider-navigation', // class for navigation line
 		'slide': '.slide' // class one slide
 	});
 });
@@ -32,7 +34,7 @@ $(function() {
 
 #### Rebuild slider for new items
 ```javascript
-	$('#slider').trigger('rebuild');
+$('#slider').trigger('rebuild');
 ```
 
 #### Check changes slides
@@ -45,6 +47,6 @@ $('#slider').on('slidechange', function(e, a){
 
 #### Go to specified slide
 ```javascript
-	var slideIndex = 4;
-	$('#slider').trigger('slideTo', slideIndex);
+var slideIndex = 4;
+$('#slider').trigger('slideTo', slideIndex);
 ```
