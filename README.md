@@ -32,7 +32,7 @@ $(function() {
 	});
 });
 ```
-- **container** - <ul> containter class.
+- **container** - `<ul>` containter class.
 - **navigation** - class for navigation line.
 - **slide** - class one slide.
 - **speed** - speed of transition to new slide.
