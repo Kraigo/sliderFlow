@@ -25,12 +25,17 @@ Need JQuery http://jquery.com/download/
 ```javascript
 $(function() {
 	$('#slider').sliderFlow({
-		'container' : '.slider-container', // <ul> containter class
-		'navigation' : '.slider-navigation', // class for navigation line
-		'slide': '.slide' // class one slide
+		'container' : '.slider-container',
+		'navigation' : '.slider-navigation',
+		'slide': '.slide', // 
+		'speed': 300
 	});
 });
 ```
+- **container** - <ul> containter class.
+- **navigation** - class for navigation line.
+- **slide** - class one slide.
+- **speed** - speed of transition to new slide.
 
 #### Rebuild slider for new items
 ```javascript

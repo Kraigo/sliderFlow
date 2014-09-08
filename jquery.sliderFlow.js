@@ -5,7 +5,8 @@
 		var settings = $.extend({
 			'container' : '.slider-container',
 			'navigation' : '.slider-navigation',
-			'slide': '.slide'
+			'slide': '.slide',
+			'speed': 300
 		}, options );
 
 		var $_slider = $(this);
@@ -75,7 +76,7 @@
 				$_slider.find(settings.slide).eq(e).addClass('active-slide');
 				$_slider.stop(true, false).animate({
 					scrollLeft: (e-slide_indent) * (slide_width)
-			    }, 300);
+			    }, settings.speed);
 				$_navigation.slider("value", e);
 
 			    $_slider.trigger('slidechange', e);
