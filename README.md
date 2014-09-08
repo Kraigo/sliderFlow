@@ -3,7 +3,7 @@ Slider Flow
 
 JQuery slider with scrolling navigation
 
-Need JQuery http://jquery.com/download/
+Need JQuery http://jquery.com/download/ and JQuery UI http://jqueryui.com/
 
 #### 1. First need connect jquery.sliderFlow script
 
