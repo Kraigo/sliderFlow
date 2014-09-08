@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+
+<title>Title</title>
+
+<link rel="shortcut icon" href="favicon.ico" />
+<!--
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+-->
+
+
+<!-- link to JQuery 1.10.2 -->
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+
+<script src="jquery.sliderFlow.js"></script>
+<link rel="stylesheet" href="sliderFlow.css">
+
+
+
+<script>
+$(function() {
+	$('#slider').sliderFlow({
+			'container' : '.slider-container',
+			'navigation' : '.slider-navigation',
+			'slide': '.slide'
+		});
+});
+
+</script>
+
+</head>
+<body style="background:#ddd">
+
+<div class="slider-wrapper">
+	<div id="slider">
+		<ul class="slider-container">
+			<li class="slide">
+				<div class="slide-image">
+					<img src="http://dummyimage.com/200x200/666/fff" alt="">
+				</div>
+				<div class="slide-description">
+					<h6 class="slide-title">SlideTitle 1</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur.</p>
+					<a href="#" class="slide-morelink">View more</a>
+				</div>
+			</li>
+			<li class="slide">
+				<div class="slide-image">
+					<img src="http://dummyimage.com/200x200/666/fff" alt="">
+				</div>
+				<div class="slide-description">
+					<h6 class="slide-title">SlideTitle 2</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur.</p>
+					<a href="#" class="slide-morelink">View more</a>
+				</div>
+			</li>
+			<li class="slide">
+				<div class="slide-image">
+					<img src="http://dummyimage.com/200x200/666/fff" alt="">
+				</div>
+				<div class="slide-description">
+					<h6 class="slide-title">SlideTitle 3</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur.</p>
+					<a href="#" class="slide-morelink">View more</a>
+				</div>
+			</li>
+			<li class="slide">
+				<div class="slide-image">
+					<img src="http://dummyimage.com/200x200/666/fff" alt="">
+				</div>
+				<div class="slide-description">
+					<h6 class="slide-title">SlideTitle 4</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur.</p>
+					<a href="#" class="slide-morelink">View more</a>
+				</div>
+			</li>
+			<li class="slide">
+				<div class="slide-image">
+					<img src="http://dummyimage.com/200x200/666/fff" alt="">
+				</div>
+				<div class="slide-description">
+					<h6 class="slide-title">SlideTitle 5</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur.</p>
+					<a href="#" class="slide-morelink">View more</a>
+				</div>
+			</li>
+			<li class="slide">
+				<div class="slide-image">
+					<img src="http://dummyimage.com/200x200/666/fff" alt="">
+				</div>
+				<div class="slide-description">
+					<h6 class="slide-title">SlideTitle 6</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur.</p>
+					<a href="#" class="slide-morelink">View more</a>
+				</div>
+			</li>
+			<li class="slide">
+				<div class="slide-image">
+					<img src="http://dummyimage.com/200x200/666/fff" alt="">
+				</div>
+				<div class="slide-description">
+					<h6 class="slide-title">SlideTitle 7</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur.</p>
+					<a href="#" class="slide-morelink">View more</a>
+				</div>
+			</li>
+			<li class="slide">
+				<div class="slide-image">
+					<img src="http://dummyimage.com/200x200/666/fff" alt="">
+				</div>
+				<div class="slide-description">
+					<h6 class="slide-title">SlideTitle 8</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur.</p>
+					<a href="#" class="slide-morelink">View more</a>
+				</div>
+			</li>
+			<li class="slide">
+				<div class="slide-image">
+					<img src="http://dummyimage.com/200x200/666/fff" alt="">
+				</div>
+				<div class="slide-description">
+					<h6 class="slide-title">SlideTitle 9</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur.</p>
+					<a href="#" class="slide-morelink">View more</a>
+				</div>
+			</li>
+		</ul>
+
+	</div>
+	<div class="slider-navigation"></div>
+</div>
+
+
+
+
+<!-- debug -->
+<div class="slider-wrapper" style="margin-top:40px">
+	<button id="addMore">More Items</button>
+	<button id="rebuild">trigger('rebuild')</button>
+	<label> Slide to: 
+		<input type="nubmer" id="slideTo" name="slideTo">
+	</label>
+	| Now Slide: <span id="nowSlide">0</span>
+</div>
+<script>
+$(function() {
+
+	$('#addMore').click(function() {
+		$('#slider .slider-container').append(
+			    $('<li>').addClass('slide')
+                .append(
+				    $('<div>').addClass('slide-image')
+                        .append(
+					        $('<img>').attr('src', 'http://dummyimage.com/200x200/666/fff')
+				        )
+                ).append(
+					$('<div>').addClass('slide-description')
+                        .append(
+                            $('<h6>').addClass('slide-description').text('Title Item')
+				         ).append (
+                            $('<p>').text('Desctiption')
+                                .append('<a>').addClass('slide-morelink').attr('href', '#').text('View More')
+                         )
+			    )
+            ) 
+	});
+
+	$('#rebuild').click(function() {
+		$('#slider').trigger('rebuild');
+	});
+
+	$('#slideTo').change(function() {
+		$('#slider').trigger('slideTo', $(this).val());
+	});
+
+	$('#slider').on('slidechange', function(e, a){
+		$('#nowSlide').text(a);
+	});
+
+
+
+});
+</script>
+</body>
+</html>
