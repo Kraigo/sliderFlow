@@ -1,7 +1,7 @@
 Slider Flow
 ========
 
-JQuery sliden width scroll navigation
+JQuery slider with scrolling navigation
 
 Need JQuery http://jquery.com/download/
 
