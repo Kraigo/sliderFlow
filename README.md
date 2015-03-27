@@ -5,12 +5,17 @@ JQuery slider with scrolling navigation
 
 Need JQuery http://jquery.com/download/ and JQuery UI http://jqueryui.com/
 
-#### 1. First need connect jquery.sliderFlow script
+##### Version 0.2
+- new parameter {equalHeight : true}. Sets the height of each cell is the largest cell
+
+### How to use
+
+##### 1. First need connect jquery.sliderFlow script
 
 ```html
 <script src=”jquery.sliderFlow.min.js”></script>
 ```
-#### 2. Create HTML
+##### 2. Create HTML
 ```html
 <div id="slider">
 	<ul class="slider-container">
@@ -21,14 +26,15 @@ Need JQuery http://jquery.com/download/ and JQuery UI http://jqueryui.com/
 </div>
 ```
 
-#### 3. Initialization function for the desired element
+##### 3. Initialization function for the desired element
 ```javascript
 $(function() {
 	$('#slider').sliderFlow({
-		'container' : '.slider-container',
-		'navigation' : '.slider-navigation',
-		'slide': '.slide', // 
-		'speed': 300
+		container : '.slider-container',
+		navigation : '.slider-navigation',
+		slide : '.slide',
+		equalHeight : true,
+		speed : 300
 	});
 });
 ```
@@ -37,12 +43,12 @@ $(function() {
 - **slide** - class one slide.
 - **speed** - speed of transition to new slide.
 
-#### Rebuild slider for new items
+##### Rebuild slider for new items
 ```javascript
 $('#slider').trigger('rebuild');
 ```
 
-#### Check changes slides
+##### Check changes slides
 ```javascript
 $('#slider').on('slidechange', function(e, a){
 	// a - value of index current slide.
@@ -50,7 +56,7 @@ $('#slider').on('slidechange', function(e, a){
 });
 ```
 
-#### Go to specified slide
+##### Go to specified slide
 ```javascript
 var slideIndex = 4;
 $('#slider').trigger('slideTo', slideIndex);

@@ -1,3 +1,9 @@
+/*
+Slider flow, version 0.2
+https://github.com/Kraigo/sliderFlow
+
+Author: Kraigo
+*/
 (function($) {
 	$.fn.sliderFlow = function(options) {
 
@@ -6,6 +12,7 @@
 			'container' : '.slider-container',
 			'navigation' : '.slider-navigation',
 			'slide': '.slide',
+			'equalHeight': true,
 			'speed': 300
 		}, options );
 
@@ -52,9 +59,27 @@
 			$_container.width(slide_quantity*slide_width);
 			$_navigation.slider("option", "max", slide_quantity-1 );
 
+			
+			$_slider.find('img').one('load', equalHeight);
+			equalHeight();
+
 			slideTo($_navigation.slider( "value" ));
 			return;
-		}
+		};
+		function equalHeight() {
+				if (!settings.equalHeight) return false;
+
+				var currentTallest = 0;
+				$_slider.find('.slide').css({'height': 'auto'}); 
+
+				$_slider.find('.slide').each(function(i){
+					if ($(this).height() > currentTallest) {
+						currentTallest = $(this).height();
+					}
+				});
+
+				$_slider.find('.slide').css({'height': currentTallest}); 
+		};
 
 		// ** Navigation ** 
 
