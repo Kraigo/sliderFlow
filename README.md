@@ -42,6 +42,7 @@ $(function() {
 - **navigation** - class for navigation line.
 - **slide** - class one slide.
 - **speed** - speed of transition to new slide.
+- **equalHeight** - sets the height of each cell is the largest cell.
 
 ##### Rebuild slider for new items
 ```javascript
